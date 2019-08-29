@@ -357,7 +357,7 @@ export default class NeoVis {
         // stabilization: {
         //     iterations: 10
         // }
-        solver: 'repulsion'
+        solver: 'repulsion',
         adaptiveTimestep: true,
         repulsion: {
           centralGravity: 0.2,
@@ -371,12 +371,15 @@ export default class NeoVis {
           fit: true
         }
 
-      }
+      },
+      groups: this._config.visjs.groups
     }
   }
 
   renderData () {
     let options = this.renderOptions()
+    console.log("aaaa")
+    console.log(options)
     var container = this._container
     this._data = {
       'nodes': new vis.DataSet(Object.values(this._nodes)),
